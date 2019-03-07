@@ -1,8 +1,15 @@
-// this is an example of improting data from JSON
-import 'orders' from '../data/orders.json';
+import { createTable, createContentTable } from './tableAndTbody.js';
+import {  createFooterTable } from './tfoot.js';
+import {  createThead } from './thead.js';
 
-export default (function () {
-    // YOUR CODE GOES HERE
-    // next line is for example only
-    document.getElementById("app").innerHTML = "<h1>Hello WG Forge</h1>";
+export default (function () { 
+    let app = document.getElementById('app');  
+    let table = createTable();
+    let thead = createThead();
+    let tbody = createContentTable();
+    let tfoot = createFooterTable();
+    app.appendChild(table);
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    table.appendChild(tfoot);
 }());
